@@ -33,7 +33,7 @@ plugins:
   - search
 
 nav:
-  - 题目分类: index.md
+  - 首页: index.md
   - 数组:
     - 题单: topics/array/index.md
     - 48. 旋转图像: topics/array/48-旋转图像.md

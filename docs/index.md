@@ -1,19 +1,22 @@
 # 算法百炼
 
-LeetCode 高频题练习与笔记。
+这是一个按专题持续沉淀的 LeetCode 刷题笔记项目，目标是把高频题做成可复习、可复用、可扩展的解题知识库。
 
-## 题目分类
+核心原则：
 
-- [数组](topics/array/index.md)
-- [回溯](topics/backtracking/index.md)
-- [二叉树](topics/binary-tree/index.md)
-- [设计题](topics/design/index.md)
-- [动态规划](topics/dp/index.md)
-- [图论](topics/graph/index.md)
-- [贪心](topics/greedy/index.md)
-- [哈希表](topics/hash/index.md)
-- [堆](topics/heap/index.md)
-- [链表](topics/linked-list/index.md)
-- [栈和队列](topics/stack-queue/index.md)
-- [字符串](topics/string/index.md)
-- [双指针](topics/two-pointers/index.md)
+- 千锤百炼：每道题都沉淀稳定的思路模板与代码写法。
+- 分类归纳：按数组、动态规划、图论等主题组织，便于阶段性复习。
+- 双语对照：关键题目提供 Python 与 C++ 两套实现，便于迁移与对比。
+
+![锤子打铁，象征千锤百炼](assets/images/hammer-forge.svg)
+
+## 如何使用
+
+1. 从左侧目录按专题进入题单。
+2. 在题解页优先理解“题意 + 思路”，再切换语言看实现细节。
+3. 定期回看同一专题，形成自己的题型反射与模板库。
+
+## 项目结构
+
+- 题解文档位于 `docs/topics/`。
+- 站点由 MkDocs Material 构建，推送到主分支后可自动部署。
