@@ -1,8 +1,8 @@
 site_name: 算法百炼
 site_description: LeetCode high-frequency problem notes
-site_url: https://xusm.github.io/LeetCode-Top-100/
-repo_url: https://github.com/xusm/LeetCode-Top-100
-repo_name: xusm/LeetCode-Top-100
+site_url: https://xusm.github.io/leetcode-top-100/
+repo_url: https://github.com/xusm/leetcode-top-100
+repo_name: xusm/leetcode-top-100
 
 theme:
   name: material
