@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>53. 最大子数组和</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --btn: #21262d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 1.25rem;
+      font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: radial-gradient(circle at top right, #1f2a3a, var(--bg) 45%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem;
+    }
+
+    h1 {
+      margin: 0 0 0.4rem;
+      font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    }
+
+    .meta {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .switch {
+      display: inline-flex;
+      gap: 8px;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .switch button {
+      border: 1px solid var(--border);
+      background: var(--btn);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 0.35rem 0.85rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .switch button.active {
+      border-color: var(--accent);
+      background: #0b2a4a;
+      color: #dbeafe;
+    }
+
+    pre {
+      margin: 0;
+      background: #0b1118;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.95rem;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
+      font-size: 0.9rem;
+    }
+
+    .panel {
+      display: none;
+    }
+
+    .panel.active {
+      display: block;
+    }
+
+    .back {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 0.75rem;
+      }
+
+      .wrap {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>53. 最大子数组和</h1>
+    <p class="meta">LeetCode: <a href="https://leetcode.cn/problems/maximum-subarray/" target="_blank" rel="noopener">最大子数组和</a> · 分类：动态规划 / Kadane</p>
+
+    <p>给定整数数组 <code>nums</code>，求连续子数组之和的最大值。</p>
+    <p>核心转移：<code>cur = max(x, cur + x)</code>，全局答案为遍历过程中的 <code>max(cur)</code>。</p>
+
+    <div class="switch" aria-label="语言切换">
+      <button type="button" data-lang="python" class="active">Python</button>
+      <button type="button" data-lang="cpp">C++</button>
+    </div>
+
+    <section class="panel active" data-lang="python">
+      <pre><code>from typing import List
+
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        cur = ans = nums[0]
+        for x in nums[1:]:
+            cur = max(x, cur + x)
+            ans = max(ans, cur)
+        return ans
+</code></pre>
+    </section>
+
+    <section class="panel" data-lang="cpp">
+      <pre><code>#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+
+class Solution {
+public:
+    int maxSubArray(vector&lt;int&gt;&amp; nums) {
+        int cur = nums[0], ans = nums[0];
+        for (int i = 1; i &lt; (int)nums.size(); ++i) {
+            cur = max(nums[i], cur + nums[i]);
+            ans = max(ans, cur);
+        }
+        return ans;
+    }
+};
+</code></pre>
+    </section>
+
+    <p class="back"><a href="./53-最大子数组和.md">查看 Markdown 版本</a> · <a href="../../index.html#topic-dp">返回首页动态规划</a></p>
+  </main>
+
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll('.switch button[data-lang]');
+      var panels = document.querySelectorAll('.panel[data-lang]');
+
+      function setLang(lang) {
+        buttons.forEach(function (btn) {
+          btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+        panels.forEach(function (panel) {
+          panel.classList.toggle('active', panel.getAttribute('data-lang') === lang);
+        });
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          setLang(btn.getAttribute('data-lang'));
+        });
+      });
+
+      setLang('python');
+    })();
+  </script>
+</body>
+</html>
