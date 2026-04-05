@@ -74,7 +74,8 @@
       font-size: 0.875rem;
     }
 
-    .sidebar-nav .toc-list li {
+    .sidebar-nav .toc-list > .toc-branch,
+    .sidebar-nav .toc-list > .toc-leaf {
       margin-bottom: 0.5rem;
     }
 
@@ -213,32 +214,129 @@
       list-style: none;
     }
 
-    .toc-list li {
+    .toc-branch,
+    .toc-leaf {
       margin-bottom: 0.65rem;
       border-left: 2px solid var(--border);
       padding-left: 0.85rem;
     }
 
-    .toc-list li:last-child {
+    .toc-branch:last-child,
+    .toc-leaf:last-child {
       margin-bottom: 0;
     }
 
-    .toc-list a {
+    .toc-branch-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.35rem;
+    }
+
+    .toc-branch-toggle {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.35rem;
+      width: 100%;
+      margin: 0;
+      padding: 0.15rem 0.35rem 0.15rem 0.25rem;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--accent);
+      font: inherit;
+      font-weight: 500;
+      line-height: 1.45;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.12s ease;
+    }
+
+    .toc-branch-toggle:hover {
+      background: var(--bg);
+    }
+
+    .toc-branch-toggle:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .toc-caret-icon {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1rem;
+      height: 1.25rem;
+      margin: 0;
+      color: var(--muted);
+      transition: color 0.12s ease;
+    }
+
+    .toc-caret-icon::before {
+      content: "▼";
+      font-size: 0.55rem;
+      line-height: 1;
+      opacity: 0.9;
+    }
+
+    .toc-branch-toggle[aria-expanded="false"] .toc-caret-icon::before {
+      content: "▶";
+      font-size: 0.5rem;
+    }
+
+    .toc-branch-toggle:hover .toc-caret-icon {
+      color: var(--text);
+    }
+
+    .toc-branch-label {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .toc-caret-spacer {
+      flex-shrink: 0;
+      width: 1rem;
+      height: 1.25rem;
+      margin: 0.05rem 0 0;
+    }
+
+    .toc-list .toc-leaf > .toc-branch-head > a {
       color: var(--accent);
       text-decoration: none;
       font-weight: 500;
     }
 
-    .toc-list a:hover {
+    .toc-list .toc-leaf > .toc-branch-head > a:hover {
       text-decoration: underline;
     }
 
-    .toc-list .sub {
-      display: block;
-      margin-top: 0.2rem;
-      font-size: 0.85rem;
-      font-weight: 400;
+    .toc-sub {
+      margin: 0.45rem 0 0 0;
+      padding: 0 0 0 1rem;
+      list-style: none;
+      border-left: 1px solid var(--border);
+    }
+
+    .toc-sub li {
+      margin-bottom: 0.35rem;
+      padding: 0;
+      border: none;
+    }
+
+    .toc-sub li:last-child {
+      margin-bottom: 0;
+    }
+
+    .toc-sub a {
       color: var(--muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 400;
+    }
+
+    .toc-sub a:hover {
+      color: var(--accent);
+      text-decoration: underline;
     }
 
     .panel.topic h3 {
@@ -311,31 +409,99 @@
       <nav class="panel sidebar-nav" id="toc">
         <h2>目录</h2>
         <ul class="toc-list">
-          <li>
-            <a href="#topic-array">数组</a>
-            <span class="sub">矩阵、区间、二分查找</span>
+          <li class="toc-branch">
+            <button type="button" class="toc-branch-toggle" aria-expanded="true" aria-controls="toc-sub-array" title="展开或收起子目录" aria-label="展开或收起「数组」下的子目录">
+              <span class="toc-caret-icon" aria-hidden="true"></span>
+              <span class="toc-branch-label">数组</span>
+            </button>
+            <ul class="toc-sub" id="toc-sub-array">
+              <li><a href="#topic-array">矩阵</a></li>
+              <li><a href="#topic-array">区间</a></li>
+              <li><a href="#topic-array">二分查找</a></li>
+            </ul>
           </li>
-          <li>
-            <a href="#topic-string">字符串</a>
-            <span class="sub">字典树（Trie）</span>
+          <li class="toc-branch">
+            <button type="button" class="toc-branch-toggle" aria-expanded="true" aria-controls="toc-sub-string" title="展开或收起子目录" aria-label="展开或收起「字符串」下的子目录">
+              <span class="toc-caret-icon" aria-hidden="true"></span>
+              <span class="toc-branch-label">字符串</span>
+            </button>
+            <ul class="toc-sub" id="toc-sub-string">
+              <li><a href="#topic-string">字典树（Trie）</a></li>
+            </ul>
           </li>
-          <li><a href="#topic-two-pointers">双指针和滑动窗口</a></li>
-          <li><a href="#topic-greedy">贪心算法</a></li>
-          <li><a href="#topic-heap">堆</a></li>
-          <li><a href="#topic-stack-queue">栈和队列</a></li>
-          <li><a href="#topic-hash">哈希表</a></li>
-          <li><a href="#topic-linked-list">链表</a></li>
-          <li>
-            <a href="#topic-binary-tree">二叉树</a>
-            <span class="sub">分治</span>
+          <li class="toc-leaf">
+            <div class="toc-branch-head">
+              <span class="toc-caret-spacer" aria-hidden="true"></span>
+              <a href="#topic-two-pointers">双指针和滑动窗口</a>
+            </div>
           </li>
-          <li><a href="#topic-backtracking">回溯</a></li>
-          <li>
-            <a href="#topic-dp">动态规划</a>
-            <span class="sub">含 Kadane 类区间最值</span>
+          <li class="toc-leaf">
+            <div class="toc-branch-head">
+              <span class="toc-caret-spacer" aria-hidden="true"></span>
+              <a href="#topic-greedy">贪心算法</a>
+            </div>
           </li>
-          <li><a href="#topic-graph">图论</a></li>
-          <li><a href="#topic-design">设计题</a></li>
+          <li class="toc-leaf">
+            <div class="toc-branch-head">
+              <span class="toc-caret-spacer" aria-hidden="true"></span>
+              <a href="#topic-heap">堆</a>
+            </div>
+          </li>
+          <li class="toc-leaf">
+            <div class="toc-branch-head">
+              <span class="toc-caret-spacer" aria-hidden="true"></span>
+              <a href="#topic-stack-queue">栈和队列</a>
+            </div>
+          </li>
+          <li class="toc-leaf">
+            <div class="toc-branch-head">
+              <span class="toc-caret-spacer" aria-hidden="true"></span>
+              <a href="#topic-hash">哈希表</a>
+            </div>
+          </li>
+          <li class="toc-leaf">
+            <div class="toc-branch-head">
+              <span class="toc-caret-spacer" aria-hidden="true"></span>
+              <a href="#topic-linked-list">链表</a>
+            </div>
+          </li>
+          <li class="toc-branch">
+            <button type="button" class="toc-branch-toggle" aria-expanded="true" aria-controls="toc-sub-binary-tree" title="展开或收起子目录" aria-label="展开或收起「二叉树」下的子目录">
+              <span class="toc-caret-icon" aria-hidden="true"></span>
+              <span class="toc-branch-label">二叉树</span>
+            </button>
+            <ul class="toc-sub" id="toc-sub-binary-tree">
+              <li><a href="#topic-binary-tree">分治</a></li>
+            </ul>
+          </li>
+          <li class="toc-leaf">
+            <div class="toc-branch-head">
+              <span class="toc-caret-spacer" aria-hidden="true"></span>
+              <a href="#topic-backtracking">回溯</a>
+            </div>
+          </li>
+          <li class="toc-branch">
+            <button type="button" class="toc-branch-toggle" aria-expanded="true" aria-controls="toc-sub-dp" title="展开或收起子目录" aria-label="展开或收起「动态规划」下的子目录">
+              <span class="toc-caret-icon" aria-hidden="true"></span>
+              <span class="toc-branch-label">动态规划</span>
+            </button>
+            <ul class="toc-sub" id="toc-sub-dp">
+              <li><a href="#topic-dp">Kadane / 最大子数组</a></li>
+              <li><a href="#topic-dp">区间最值思路</a></li>
+            </ul>
+          </li>
+          <li class="toc-leaf">
+            <div class="toc-branch-head">
+              <span class="toc-caret-spacer" aria-hidden="true"></span>
+              <a href="#topic-graph">图论</a>
+            </div>
+          </li>
+          <li class="toc-leaf">
+            <div class="toc-branch-head">
+              <span class="toc-caret-spacer" aria-hidden="true"></span>
+              <a href="#topic-design">设计题</a>
+            </div>
+          </li>
         </ul>
         <p class="toc-meta">
           <a href="topics/README.md">知识点 Markdown 总索引</a>
@@ -472,5 +638,19 @@
     </footer>
     </main>
   </div>
+  <script>
+    (function () {
+      document.querySelectorAll(".toc-branch-toggle").forEach(function (btn) {
+        var subId = btn.getAttribute("aria-controls");
+        var sub = subId ? document.getElementById(subId) : null;
+        if (!sub) return;
+        btn.addEventListener("click", function () {
+          var open = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", open ? "false" : "true");
+          sub.hidden = open;
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
