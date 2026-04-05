@@ -7,6 +7,8 @@ repo_name: ShaominXu/LeetCode-Top-100
 theme:
   name: material
   language: zh
+  icon:
+    repo: fontawesome/brands/github
   palette:
     - scheme: default
       primary: purple
