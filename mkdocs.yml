@@ -36,7 +36,11 @@ nav:
   - 首页: index.md
   - 题目分类:
       - 总览: topics/index.md
-      - 数组: topics/array/index.md
+      - 数组:
+          - 题单: topics/array/index.md
+          - 48. 旋转图像: topics/array/48-旋转图像.md
+          - 54. 螺旋矩阵: topics/array/54-螺旋矩阵.md
+          - 59. 螺旋矩阵 II: topics/array/59-螺旋矩阵II.md
       - 回溯: topics/backtracking/index.md
       - 二叉树: topics/binary-tree/index.md
       - 设计题: topics/design/index.md
