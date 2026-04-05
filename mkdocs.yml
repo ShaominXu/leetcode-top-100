@@ -24,6 +24,8 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: true
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.inlinehilite
