@@ -8,7 +8,7 @@
 - 分类归纳：按数组、动态规划、图论等主题组织，便于阶段性复习。
 - 双语对照：关键题目提供 Python 与 C++ 两套实现，便于迁移与对比。
 
-![锤子像素图](assets/hammer-pixel.svg)
+<img src="assets/hammer-pixel.svg" alt="锤子像素图" width="220" />
 
 ## 如何使用
 
