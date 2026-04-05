@@ -1,4 +1,4 @@
-site_name: LeetCode Top 100
+site_name: 算法百炼
 site_description: LeetCode high-frequency problem notes
 site_url: https://xusm.github.io/LeetCode-Top-100/
 repo_url: https://github.com/xusm/LeetCode-Top-100
@@ -34,25 +34,22 @@ plugins:
   - search
 
 nav:
-  - 首页: index.md
-  - 题目分类:
-      - 总览: topics/index.md
-      - 数组:
-          - 题单: topics/array/index.md
-          - 48. 旋转图像: topics/array/48-旋转图像.md
-          - 54. 螺旋矩阵: topics/array/54-螺旋矩阵.md
-          - 59. 螺旋矩阵 II: topics/array/59-螺旋矩阵II.md
-      - 回溯: topics/backtracking/index.md
-      - 二叉树: topics/binary-tree/index.md
-      - 设计题: topics/design/index.md
-      - 动态规划:
-          - 题单: topics/dp/index.md
-          - 53. 最大子数组和: topics/dp/53-最大子数组和.md
-      - 图论: topics/graph/index.md
-      - 贪心: topics/greedy/index.md
-      - 哈希表: topics/hash/index.md
-      - 堆: topics/heap/index.md
-      - 链表: topics/linked-list/index.md
-      - 栈和队列: topics/stack-queue/index.md
-      - 字符串: topics/string/index.md
-      - 双指针: topics/two-pointers/index.md
+  - 数组:
+    - 题单: topics/array/index.md
+    - 48. 旋转图像: topics/array/48-旋转图像.md
+    - 54. 螺旋矩阵: topics/array/54-螺旋矩阵.md
+    - 59. 螺旋矩阵 II: topics/array/59-螺旋矩阵II.md
+  - 回溯: topics/backtracking/index.md
+  - 二叉树: topics/binary-tree/index.md
+  - 设计题: topics/design/index.md
+  - 动态规划:
+    - 题单: topics/dp/index.md
+    - 53. 最大子数组和: topics/dp/53-最大子数组和.md
+  - 图论: topics/graph/index.md
+  - 贪心: topics/greedy/index.md
+  - 哈希表: topics/hash/index.md
+  - 堆: topics/heap/index.md
+  - 链表: topics/linked-list/index.md
+  - 栈和队列: topics/stack-queue/index.md
+  - 字符串: topics/string/index.md
+  - 双指针: topics/two-pointers/index.md

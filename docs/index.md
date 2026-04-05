@@ -1,15 +1,19 @@
-# LeetCode Top 100
+# 算法百炼
 
-这是一个按专题维护的 LeetCode 刷题笔记站点。
+LeetCode 高频题练习与笔记。
 
-## 使用说明
+## 题目分类
 
-1. 所有内容都写在 `docs/` 下的 Markdown 文件中。
-2. 推送到 `main` 后，GitHub Actions 会自动构建并部署页面。
-3. 新增题解时，在对应专题目录新增 `题号-题目名.md` 即可。
-
-## 快速入口
-
-- [专题总览](topics/index.md)
+- [数组](topics/array/index.md)
+- [回溯](topics/backtracking/index.md)
+- [二叉树](topics/binary-tree/index.md)
+- [设计题](topics/design/index.md)
 - [动态规划](topics/dp/index.md)
-- [53. 最大子数组和](topics/dp/53-最大子数组和.md)
+- [图论](topics/graph/index.md)
+- [贪心](topics/greedy/index.md)
+- [哈希表](topics/hash/index.md)
+- [堆](topics/heap/index.md)
+- [链表](topics/linked-list/index.md)
+- [栈和队列](topics/stack-queue/index.md)
+- [字符串](topics/string/index.md)
+- [双指针](topics/two-pointers/index.md)
