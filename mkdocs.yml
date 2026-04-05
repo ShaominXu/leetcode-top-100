@@ -1,0 +1,53 @@
+site_name: LeetCode Top 100
+site_description: LeetCode high-frequency problem notes
+site_url: https://xusm.github.io/LeetCode-Top-100/
+repo_url: https://github.com/xusm/LeetCode-Top-100
+repo_name: xusm/LeetCode-Top-100
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - scheme: default
+      primary: blue
+      accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.details
+
+plugins:
+  - search
+
+nav:
+  - 首页: index.md
+  - 题目分类:
+      - 总览: topics/index.md
+      - 数组: topics/array/README.md
+      - 回溯: topics/backtracking/README.md
+      - 二叉树: topics/binary-tree/README.md
+      - 设计题: topics/design/README.md
+      - 动态规划:
+          - 题单: topics/dp/README.md
+          - 53. 最大子数组和: topics/dp/53-最大子数组和.md
+      - 图论: topics/graph/README.md
+      - 贪心: topics/greedy/README.md
+      - 哈希表: topics/hash/README.md
+      - 堆: topics/heap/README.md
+      - 链表: topics/linked-list/README.md
+      - 栈和队列: topics/stack-queue/README.md
+      - 字符串: topics/string/README.md
+      - 双指针: topics/two-pointers/README.md
