@@ -19,3 +19,8 @@
   font-size: 0.95rem;
   font-weight: 700;
 }
+
+/* Hide site title block in the left sidebar */
+.md-nav--primary > .md-nav__title {
+  display: none;
+}

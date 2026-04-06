@@ -18,6 +18,7 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
+    - content.tabs.link
 
 markdown_extensions:
   - admonition
@@ -39,7 +40,6 @@ extra_css:
 docs_dir: docs
 
 nav:
-  - 首页: index.md
   - 1. 数组:
     - 普通数组: 普通数组.md
     - 1.1 盛最多水的容器: 11-盛最多水的容器.md

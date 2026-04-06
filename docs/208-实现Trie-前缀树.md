@@ -7,7 +7,6 @@ Trie 每个节点维护 26 个子节点和结尾标记。
 - `search`：逐字符匹配，最后检查结尾标记
 - `startsWith`：只需逐字符匹配
 
-
 ## 代码
 
 === "Python3"
@@ -48,9 +47,6 @@ Trie 每个节点维护 26 个子节点和结尾标记。
 
 === "C++"
     ```cpp
-    #include <vector>
-    #include <string>
-    using namespace std;
 
     class Trie {
     public:
@@ -97,7 +93,6 @@ Trie 每个节点维护 26 个子节点和结尾标记。
         }
     };
     ```
-
 
 ## 复杂度分析
 
