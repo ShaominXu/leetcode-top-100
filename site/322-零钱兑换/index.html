@@ -3347,11 +3347,22 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="思路">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="代码">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         复杂度分析
@@ -3363,17 +3374,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        代码
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3872,11 +3872,22 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="思路">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="代码">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         复杂度分析
@@ -3888,17 +3899,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        代码
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3927,10 +3927,7 @@
 <p>完全背包模型。<code>dp[a]</code> 表示凑成金额 <code>a</code> 的最少硬币数，初始化为无穷大，<code>dp[0]=0</code>。
 对每个硬币 <code>c</code>，从 <code>c</code> 到 <code>amount</code> 更新：
 <code>dp[a] = min(dp[a], dp[a-c] + 1)</code>。</p>
-<h3 id="_3">复杂度分析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>时间复杂度：O(n * amount)。
-空间复杂度：O(amount)。</p>
-<h2 id="_4">代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_3">代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python3</label><label for="__tabbed_1_2">C++</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3964,6 +3961,9 @@
 </div>
 </div>
 </div>
+<h3 id="_4">复杂度分析<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>时间复杂度：O(n * amount)，因为需要遍历二维规模数据。
+空间复杂度：O(amount)，额外空间主要来自哈希表/队列/递归栈等辅助结构。</p>
 
 
 

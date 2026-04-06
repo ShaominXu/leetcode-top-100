@@ -3095,11 +3095,22 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="思路">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="代码">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         复杂度分析
@@ -3111,17 +3122,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        代码
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3872,11 +3872,22 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="思路">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="代码">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         复杂度分析
@@ -3888,17 +3899,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        代码
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3927,10 +3927,7 @@
 <p><code>dp[i][j]</code> 表示 <code>word1</code> 前 <code>i</code> 个字符变成 <code>word2</code> 前 <code>j</code> 个字符的最少操作数。
 若末尾字符相同：<code>dp[i][j] = dp[i-1][j-1]</code>。
 否则取插入、删除、替换三种操作最小值加一。</p>
-<h3 id="_3">复杂度分析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>时间复杂度：O(mn)。
-空间复杂度：O(mn)。</p>
-<h2 id="_4">代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_3">代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python3</label><label for="__tabbed_1_2">C++</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3976,6 +3973,9 @@
 </div>
 </div>
 </div>
+<h3 id="_4">复杂度分析<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>时间复杂度：O(mn)，因为需要遍历二维规模数据。
+空间复杂度：O(mn)，额外空间主要来自哈希表/队列/递归栈等辅助结构。</p>
 
 
 

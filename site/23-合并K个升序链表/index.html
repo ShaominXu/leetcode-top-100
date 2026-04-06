@@ -1759,11 +1759,22 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="思路">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="代码">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         复杂度分析
@@ -1775,17 +1786,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        代码
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3872,11 +3872,22 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="思路">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="代码">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         复杂度分析
@@ -3888,17 +3899,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        代码
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3926,10 +3926,7 @@
 <h2 id="_1">思路<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>使用最小堆维护每条链表当前结点。每次弹出最小结点接到结果链表后，
 若该结点有后继，则将后继入堆。</p>
-<h3 id="_2">复杂度分析<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>时间复杂度：O(N log k)，N 为总节点数。
-空间复杂度：O(k)。</p>
-<h2 id="_3">代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_2">代码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python3</label><label for="__tabbed_1_2">C++</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3993,6 +3990,9 @@
 </div>
 </div>
 </div>
+<h3 id="_3">复杂度分析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>时间复杂度：O(N log k)，主要开销来自排序/二分/堆等对数级操作。
+空间复杂度：O(k)，额外空间主要来自哈希表/队列/递归栈等辅助结构。</p>
 
 
 

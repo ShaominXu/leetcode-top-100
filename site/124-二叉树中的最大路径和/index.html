@@ -2483,11 +2483,22 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="思路">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="代码">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         复杂度分析
@@ -2499,17 +2510,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        代码
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3872,11 +3872,22 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="思路">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="代码">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         复杂度分析
@@ -3888,17 +3899,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        代码
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3926,10 +3926,7 @@
 <h2 id="_2">思路<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>后序遍历。对每个结点计算向上贡献值 <code>gain = node.val + max(0, left_gain, right_gain)</code>。
 同时以该结点为拐点计算路径和 <code>node.val + max(0,left) + max(0,right)</code> 更新全局最大值。</p>
-<h3 id="_3">复杂度分析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>时间复杂度：O(n)。
-空间复杂度：O(h)。</p>
-<h2 id="_4">代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_3">代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python3</label><label for="__tabbed_1_2">C++</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3987,6 +3984,9 @@
 </div>
 </div>
 </div>
+<h3 id="_4">复杂度分析<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>时间复杂度：O(n)，因为主要流程对数据做了一次线性处理。
+空间复杂度：O(h)，额外空间主要来自哈希表/队列/递归栈等辅助结构。</p>
 
 
 
