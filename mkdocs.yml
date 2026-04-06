@@ -15,6 +15,7 @@ theme:
       accent: indigo
   features:
     - navigation.sections
+    - navigation.expand
     - navigation.indexes
     - navigation.top
     - toc.integrate
