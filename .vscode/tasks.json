@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "bulk-format-docs-and-nav",
+			"type": "shell",
+			"command": "set -e\ncd /Users/xusm/Documents/GitHub/leetcode-top-100\nfor f in docs/*.md; do\n  perl -i -pe 'if (/时间复杂度：|空间复杂度：/) { s/\\$//g }' \"$f\"\n  perl -i -pe 's/^# \\[[0-9]+\\.\\s*(.*?)\\]\\((.*?)\\)/# [$1]($2)/' \"$f\"\n  perl -0777 -i -pe 's/\\n---\\n\\n\\[← 返回站点首页\\]\\(index\\.md\\)\\n?/\\n/g; s/\\n?\\[← 返回站点首页\\]\\(index\\.md\\)\\n?/\\n/g' \"$f\"\ndone\nruby -e '\nlines = File.readlines(\"mkdocs.yml\", chomp: true)\nsec = nil\ncount = 0\nlines.map! do |line|\n  if (m = line.match(/^  - (\\d+)\\.[^:]*:$/))\n    sec = m[1]\n    count = 0\n    line\n  elsif sec && (m = line.match(/^    - (.+): ([0-9][^ ]*\\.md)$/))\n    label = m[1].sub(/^\\d+\\.\\s*/, \"\")\n    path = m[2]\n    count += 1\n    \"    - #{sec}.#{count} #{label}: #{path}\"\n  else\n    line\n  end\nend\nlines.map! { |l| l.sub(/^(\\s*primary:\\s*).*/, \"\\\\1light blue\") }\nFile.write(\"mkdocs.yml\", lines.join(\"\\n\") + \"\\n\")\n'",
+			"isBackground": false
+		},
+		{
+			"label": "finalize-dollar-and-nav-numbering",
+			"type": "shell",
+			"command": "cd /Users/xusm/Documents/GitHub/leetcode-top-100 && perl -i -pe 's/\\$//g' docs/*.md && ruby <<'RUBY'\npath = 'mkdocs.yml'\nlines = File.readlines(path, chomp: true)\nsec = nil\ncnt = 0\nlines.map! do |line|\n  if (m = line.match(/^  - (\\d+)\\.[^:]*:$/))\n    sec = m[1]\n    cnt = 0\n    line\n  elsif sec && (m = line.match(/^    - (.+): ([0-9][^ ]*\\.md)$/))\n    label = m[1].sub(/^\\d+\\.\\s*/, '')\n    file = m[2]\n    cnt += 1\n    \"    - #{sec}.#{cnt} #{label}: #{file}\"\n  elsif line =~ /^\\s*primary:\\s*/\n    line.sub(/^\\s*primary:\\s*.*/, '      primary: light blue')\n  else\n    line\n  end\nend\nFile.write(path, lines.join(\"\\n\") + \"\\n\")\nRUBY",
+			"isBackground": false
+		},
+		{
+			"label": "normalize-nav-label-numbering",
+			"type": "shell",
+			"command": "cd /Users/xusm/Documents/GitHub/leetcode-top-100 && ruby <<'RUBY'\npath = 'mkdocs.yml'\nlines = File.readlines(path, chomp: true)\nsec = nil\ncnt = 0\nlines.map! do |line|\n  if (m = line.match(/^  - (\\d+)\\.[^:]*:$/))\n    sec = m[1]\n    cnt = 0\n    line\n  elsif sec && (m = line.match(/^    - (.+): ([0-9][^ ]*\\.md)$/))\n    label = m[1]\n    label = label.sub(/^(?:\\d+(?:\\.\\d+)?\\s+)+/, '')\n    label = label.sub(/^\\d+\\.\\s*/, '')\n    cnt += 1\n    \"    - #{sec}.#{cnt} #{label}: #{m[2]}\"\n  else\n    line\n  end\nend\nFile.write(path, lines.join(\"\\n\") + \"\\n\")\nRUBY",
+			"isBackground": false
+		},
+		{
+			"label": "strict-build-after-formatting",
+			"type": "shell",
+			"command": "cd /Users/xusm/Documents/GitHub/leetcode-top-100 && source .venv/bin/activate && mkdocs build --strict",
+			"isBackground": false
+		}
+	]
+}

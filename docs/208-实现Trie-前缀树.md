@@ -1,4 +1,4 @@
-# [208. 实现 Trie (前缀树)](https://leetcode.cn/problems/implement-trie-prefix-tree/)
+# [实现 Trie (前缀树)](https://leetcode.cn/problems/implement-trie-prefix-tree/)
 
 ## 思路
 
@@ -7,8 +7,8 @@ Trie 每个节点维护 26 个子节点和结尾标记。
 - `search`：逐字符匹配，最后检查结尾标记
 - `startsWith`：只需逐字符匹配
 
-时间复杂度：三操作均为 $O(L)$。
-空间复杂度：$O(\sum L)$。
+时间复杂度：三操作均为 O(L)。
+空间复杂度：O(\sum L)。
 
 ## 代码
 
@@ -100,6 +100,3 @@ Trie 每个节点维护 26 个子节点和结尾标记。
     };
     ```
 
----
-
-[← 返回站点首页](index.md)
