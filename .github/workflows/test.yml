@@ -65,7 +65,16 @@ jobs:
 
       - name: Adjust mkdocs config for staging
         run: |
-          sed -i 's|site_url: https://shaominxu.github.io/leetcode-top-100/|site_url: https://shaominxu.github.io/leetcode-top-100/staging/|g' mkdocs.yml
+          python3 << 'PY'
+          import yaml
+          with open('mkdocs.yml', 'r', encoding='utf-8') as f:
+              config = yaml.safe_load(f)
+          config['site_url'] = 'https://shaominxu.github.io/leetcode-top-100/staging/'
+          # 在导航最前面插入首页
+          config['nav'].insert(0, {'首页': 'index.md'})
+          with open('mkdocs.yml', 'w', encoding='utf-8') as f:
+              yaml.dump(config, f, allow_unicode=True, sort_keys=False)
+          PY
 
       - name: Build site
         run: mkdocs build --strict
