@@ -66,30 +66,17 @@ jobs:
       - name: Adjust mkdocs config for staging
         run: |
           python3 << 'PY'
-          # 使用sed安全地修改site_url和添加首页
+          # 修改site_url为staging环境的URL
           with open('mkdocs.yml', 'r', encoding='utf-8') as f:
               lines = f.readlines()
           
-          # 修改site_url和nav
           new_lines = []
-          nav_found = False
-          homepage_added = False
-          
           for line in lines:
-              # 替换site_url
               if 'site_url: https://shaominxu.github.io/leetcode-top-100/' in line:
                   line = line.replace(
                       'site_url: https://shaominxu.github.io/leetcode-top-100/',
                       'site_url: https://shaominxu.github.io/leetcode-top-100/staging/'
                   )
-              
-              # 在nav:后添加首页
-              if line.startswith('nav:') and not nav_found:
-                  nav_found = True
-                  new_lines.append(line)
-                  new_lines.append('  - 首页: index.md\n')
-                  continue
-              
               new_lines.append(line)
           
           with open('mkdocs.yml', 'w', encoding='utf-8') as f:
